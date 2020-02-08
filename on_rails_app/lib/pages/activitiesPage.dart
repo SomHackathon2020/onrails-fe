@@ -7,12 +7,14 @@ class ActivityPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold
-    (
-      body: Column(
-         children: <Widget>[
-            EventComponent()
-         ],
+    return SafeArea(
+          child: Scaffold
+      (
+        body: Column(
+           children: <Widget>[
+              EventComponent()
+           ],
+        ),
       ),
     );
   }

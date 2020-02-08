@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:on_rails_app/components/actividadComponent.dart';
-import 'package:on_rails_app/components/bottomNav.dart';
+import 'package:on_rails_app/pages/activitiesPage.dart';
+import 'package:on_rails_app/pages/contactPage.dart';
+
 
 class HomePage extends StatefulWidget {
 
@@ -16,19 +17,13 @@ class _MyStatefulWidgetState extends State<HomePage> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
+  static  List<Widget> _widgetOptions = <Widget>[
     Text(
       'Index 0: Menu',
       style: optionStyle,
     ),
-    Text(
-      'Index 1: Eventos',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: Amigos',
-      style: optionStyle,
-    ),
+    ActivityPage(),
+    ContactPage(),
     Text(
       'Index 3: Perfil',
       style: optionStyle,
