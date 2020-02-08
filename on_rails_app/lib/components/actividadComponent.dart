@@ -10,30 +10,13 @@ class EventComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(30.0),
-      child: _cardTipo2()
+      padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+      child: _card()
     );
   }
 
-  Widget createCard(){
-    return Card(
-      elevation: 10.0,
-      shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(50.0) ),
-      child: Column(
-        children: <Widget>[
-        Image.memory(bytes,
-          fit: BoxFit.cover,
-        ),
-        Container(
-          padding: EdgeInsets.all(5.0),
-          child: Text('Jugar al Ajedrez'),
-        )
-        ],
-      )
-    );
-  }
 
-  Widget _cardTipo2() {
+  Widget _card() {
 
     final card = Container(
       // clipBehavior: Clip.antiAlias,

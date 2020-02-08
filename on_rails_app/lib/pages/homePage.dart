@@ -13,6 +13,8 @@ class HomePage extends StatelessWidget {
     //),
     body: ListView(
       children: <Widget>[
+        EventComponent(),
+        EventComponent(),
         EventComponent()
       ],
     ),
