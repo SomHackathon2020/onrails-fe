@@ -126,6 +126,7 @@ class _ListaPageState extends State<ContactPage> {
     for (var i = 0; i<5 ;i++){
       _image.add("https://www.un.org/pga/72/wp-content/uploads/sites/51/2017/08/dummy-profile-300x300.jpg");
     _listaUsers.add("Carlos Flores");
+    _level.add("5");
     }
 
     setState(() {});

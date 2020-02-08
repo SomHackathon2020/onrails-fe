@@ -12,6 +12,7 @@ class ActivityPage extends StatelessWidget {
       (
         body: Column(
            children: <Widget>[
+              EventComponent(),
               EventComponent()
            ],
         ),
