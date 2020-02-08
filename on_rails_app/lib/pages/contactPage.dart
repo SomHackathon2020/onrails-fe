@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'dart:async';
 
-import '../components/bottomNav.dart';
-
 
 class ContactPage extends StatefulWidget {
   @override

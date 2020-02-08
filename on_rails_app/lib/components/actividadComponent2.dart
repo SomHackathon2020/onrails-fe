@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:typed_data';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +29,7 @@ class EventComponent2 extends StatelessWidget {
               children: <Widget>[
                 ListTile(
                 leading: Icon(Icons.phone_android, size: 50,),
-                title: Text('Aprende a usar el Mòbil', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
+                title: Text('Aprende a usar el Móvil', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
                 subtitle: Text('Casal Gent Gran Parc Municipal de Mataró', style: TextStyle( fontSize: 15)),
                 ),
                 

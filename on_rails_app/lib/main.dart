@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:on_rails_app/routes/routes.dart';
-import 'components/bottomNav.dart';
 
 
 void main() => runApp(MyApp());
