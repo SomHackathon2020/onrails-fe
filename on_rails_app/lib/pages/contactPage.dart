@@ -15,6 +15,8 @@ class _ListaPageState extends State<ContactPage> {
   ScrollController _scrollController = new ScrollController();
 
   List<String> _listaUsers = new List();
+  List<String> _level = new List();
+  List<String> _image = new List();
   String _ultimoItem = "";
 
   @override
@@ -71,9 +73,10 @@ class _ListaPageState extends State<ContactPage> {
         itemBuilder: (BuildContext context, int index ){
           return ListTile(
             leading: CircleAvatar(
-              //backgroundImage: (),
+              backgroundImage: NetworkImage(_image[index]),
               ),
               title: Text(_listaUsers[index]),
+              subtitle: Text("Nivel: "+_level[index]),
           );
         }
       )
@@ -87,6 +90,8 @@ class _ListaPageState extends State<ContactPage> {
     new Timer( duration, () {
 
       _listaUsers.clear();
+      _level.clear();
+      _image.clear();
       //_ultimoItem++;
       _agregarUsu();
 
@@ -105,11 +110,24 @@ class _ListaPageState extends State<ContactPage> {
       //_listaNumeros.add( _ultimoItem );
     //}
     _listaUsers.add("John Deere");
+    _level.add("10");
+    _image.add("https://www.un.org/pga/72/wp-content/uploads/sites/51/2017/08/dummy-profile-300x300.jpg");
     _listaUsers.add("Clara Lago");
+    _level.add("9");
+    _image.add("https://www.un.org/pga/72/wp-content/uploads/sites/51/2017/08/dummy-profile-300x300.jpg");
     _listaUsers.add("Pepe Pizuelo");
+    _level.add("5");
+    _image.add("https://www.un.org/pga/72/wp-content/uploads/sites/51/2017/08/dummy-profile-300x300.jpg");
     _listaUsers.add("Lola Flores");
+    _level.add("10");
+    _image.add("https://www.un.org/pga/72/wp-content/uploads/sites/51/2017/08/dummy-profile-300x300.jpg");
     _listaUsers.add("Leo Messi");
+    _level.add("11");
+    _image.add("https://www.mundodeportivo.com/r/GODO/MD/p5/MasQueDeporte/Imagenes/2018/10/24/Recortada/img_femartinez_20181010-125104_imagenes_md_otras_fuentes_captura-kcOG-U452531892714hYG-980x554@MundoDeportivo-Web.JPG");
     _listaUsers.add("Perez de los Cobos");
+    _level.add("5");
+    _image.add("https://www.un.org/pga/72/wp-content/uploads/sites/51/2017/08/dummy-profile-300x300.jpg");
+
 
     setState(() {});
 
