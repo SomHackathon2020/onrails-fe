@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 #Sat Feb 08 19:27:22 CET 2020
+=======
+<<<<<<< HEAD
+#Sat Feb 08 18:12:27 GMT 2020
+base.0=C\:\\Users\\ericf\\Desktop\\Hackathon\\onrails-fe\\on_rails_app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+=======
+#Sat Feb 08 17:41:33 CET 2020
+>>>>>>> 61d43f4617330a6c9d26201716653ee0eddb9f46
 base.0=C\:\\Users\\alber\\Desktop\\onrails-fe\\on_rails_app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+>>>>>>> c26b9383a75eb20bdd8bf2bb7ad4b50d9a84660b
 path.0=classes.dex
 renamed.0=classes.dex
