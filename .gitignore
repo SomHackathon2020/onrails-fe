@@ -76,3 +76,4 @@
 on_rails_app/android
 on_rails_app/build
 on_rails_app/ios
+on_rails_app/android/local.properties
