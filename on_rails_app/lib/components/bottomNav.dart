@@ -6,18 +6,25 @@ class BottomNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
   return BottomNavigationBar(
+          fixedColor: Colors.black,
+          backgroundColor: Colors.red,
+          unselectedItemColor: Colors.black54,
           items: [
             new BottomNavigationBarItem(
-                icon: new Icon(Icons.add),
-                title: new Text("trends")
+                icon: new Icon(Icons.home),
+                title: new Text("Menu")
             ),
             new BottomNavigationBarItem(
-                icon: new Icon(Icons.location_on),
-                title: new Text("feed")
+                icon: new Icon(Icons.local_activity),
+                title: new Text("Eventos")
             ),
             new BottomNavigationBarItem(
                 icon: new Icon(Icons.people),
-                title: new Text("community")
+                title: new Text("Amigos")
+            ),
+            new BottomNavigationBarItem(
+                icon: new Icon(Icons.person),
+                title: new Text("Usuario")
             )
           ]
       );

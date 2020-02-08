@@ -4705,6 +4705,7 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 --------------------------------------------------------------------------------
+<<<<<<< HEAD
 flutter_screenutil
 
 Apache License
@@ -4909,6 +4910,8 @@ Apache License
    See the License for the specific language governing permissions and
    limitations under the License.
 --------------------------------------------------------------------------------
+=======
+>>>>>>> c26b9383a75eb20bdd8bf2bb7ad4b50d9a84660b
 flutter_spinkit
 
 MIT License
