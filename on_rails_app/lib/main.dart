@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'components/bottomnav.dart';
+import 'components/bottomNav.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.yellow,
       ),
-      home: MyHomePage(title: 'OnRails'),
+      home: MyHomePage(title: "MOU'TE"),
     );
   }
 }
