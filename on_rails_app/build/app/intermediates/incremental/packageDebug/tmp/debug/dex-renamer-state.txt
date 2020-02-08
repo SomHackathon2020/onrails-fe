@@ -1,4 +1,4 @@
-#Sat Feb 08 12:07:05 CET 2020
-base.0=C\:\\Users\\alber\\Desktop\\onrails-fe\\on_rails_app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+#Sat Feb 08 15:18:26 GMT 2020
+base.0=C\:\\Users\\ericf\\Desktop\\Hackathon\\onrails-fe\\on_rails_app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

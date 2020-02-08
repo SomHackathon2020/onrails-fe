@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:on_rails_app/routes/routes.dart';
 import 'components/bottomNav.dart';
 
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      initialRoute: '/',
+      initialRoute: 'logIn',
       routes: getApplicationRoutes(),
     );
   }
@@ -37,6 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
+
+ 
 
   @override
   Widget build(BuildContext context) {
