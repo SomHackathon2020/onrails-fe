@@ -48,7 +48,7 @@ class _ListaPageState extends State<ContactPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Contact'),
+        title: Text('Amigos'),
       ),
       body: Stack(
         children: <Widget>[
@@ -106,26 +106,35 @@ class _ListaPageState extends State<ContactPage> {
       //_listaNumeros.add( _ultimoItem );
     //}
     _listaUsers.add("John Smith");
-    _level.add("10");
     _image.add("https://cdn.someecards.com/posts/meet-the-conservative-grandpa-on-twitter-who-chrissy-teigan-made-famous-Ku5.png");
+    _level.add("10");
+
+    
     _listaUsers.add("Clara Lago");
+    _image.add("https://www.un.org/pga/72/wp-content/uploads/sites/51/2017/08/dummy-profile-300x300.jpg");
     _level.add("9");
+
     _image.add("https://www.un.org/pga/72/wp-content/uploads/sites/51/2017/08/dummy-profile-300x300.jpg");
     _listaUsers.add("Pepe Pizuelo");
     _level.add("5");
+
     _image.add("https://www.un.org/pga/72/wp-content/uploads/sites/51/2017/08/dummy-profile-300x300.jpg");
     _listaUsers.add("Lola Flores");
     _level.add("10");
-    _image.add("https://www.un.org/pga/72/wp-content/uploads/sites/51/2017/08/dummy-profile-300x300.jpg");
+
+   
+    _image.add("https://www.mundodeportivo.com/r/GODO/MD/p5/MasQueDeporte/Imagenes/2018/10/24/Recortada/img_femartinez_20181010-125104_imagenes_md_otras_fuentes_captura-kcOG-U452531892714hYG-980x554@MundoDeportivo-Web.JPG");
     _listaUsers.add("Leo Messi");
     _level.add("11");
-    _image.add("https://www.mundodeportivo.com/r/GODO/MD/p5/MasQueDeporte/Imagenes/2018/10/24/Recortada/img_femartinez_20181010-125104_imagenes_md_otras_fuentes_captura-kcOG-U452531892714hYG-980x554@MundoDeportivo-Web.JPG");
+
+    _image.add("https://www.un.org/pga/72/wp-content/uploads/sites/51/2017/08/dummy-profile-300x300.jpg");
     _listaUsers.add("Perez de los Cobos");
     _level.add("5");
     //
     for (var i = 0; i<5 ;i++){
       _image.add("https://www.un.org/pga/72/wp-content/uploads/sites/51/2017/08/dummy-profile-300x300.jpg");
-    _listaUsers.add("Carlos Flores");
+      _listaUsers.add("Carlos Flores");
+      _level.add("5");
     }
 
     setState(() {});
@@ -154,7 +163,7 @@ class _ListaPageState extends State<ContactPage> {
 
 
 
-    _agregarUsu();
+    //_agregarUsu();
 
   }
 

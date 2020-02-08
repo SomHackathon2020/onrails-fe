@@ -32,9 +32,9 @@ class EventComponent extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 ListTile(
-                leading: Icon(Icons.border_all, size: 50,),
+                leading: Icon(Icons.place, size: 50,),
                 title: Text('Jugar al futbol', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
-                subtitle: Text('Campo Municipal de Mataró', style: TextStyle( fontSize: 15)),
+                subtitle: Text('Camp Municipal de Mataró', style: TextStyle( fontSize: 15)),
                 ),
                 
                 Container(
