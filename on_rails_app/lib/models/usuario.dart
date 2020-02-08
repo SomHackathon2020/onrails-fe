@@ -1,3 +1,4 @@
+
 import 'dart:convert';
 
 User trackFromJson(String str) => User.fromJson(json.decode(str));
@@ -5,45 +6,73 @@ User trackFromJson(String str) => User.fromJson(json.decode(str));
 String trackToJson(User data) => json.encode(data.toJson());
 
 class User {
+    int id;
     String name;
     String email;
     String phone;
-    String bornName;
-    int points;
-    String photo;
+    DateTime birth;
+    String actualxp;
+    String picture;
+    int levelsId;
+    dynamic token;
+    UserLevel level;
 
     User({
+        this.id,
         this.name,
         this.email,
         this.phone,
-        this.bornName,
-        this.points,
-        this.photo,
+        this.birth,
+        this.actualxp,
+        this.picture,
+        this.levelsId,
+        this.token,
+        this.level,
     });
 
-    User.fromJson(Map<String, dynamic> json){
-        name      = json["name"];
-        email     = json["email"];
-        phone     = json["phone"];
-        bornName  = json["born_name"];
-        points    = json["points"];
-        photo     = json["photo"];
-    }
+    factory User.fromJson(Map<String, dynamic> json) => User(
+        id: json["id"],
+        name: json["name"],
+        email: json["email"],
+        phone: json["phone"],
+        birth: DateTime.parse(json["birth"]),
+        actualxp: json["actualxp"],
+        picture: json["picture"],
+        levelsId: json["levels_id"],
+        token: json["token"],
+        level: UserLevel.fromJson(json["level"]),
+    );
 
     Map<String, dynamic> toJson() => {
+        "id": id,
         "name": name,
         "email": email,
         "phone": phone,
-        "bornName": bornName,
-        "points": points,
-        "photo": photo,//photo link
-     };
+        "birth": "${birth.year.toString().padLeft(4, '0')}-${birth.month.toString().padLeft(2, '0')}-${birth.day.toString().padLeft(2, '0')}",
+        "actualxp": actualxp,
+        "picture": picture,
+        "levels_id": levelsId,
+        "token": token,
+        "level": level.toJson(),
+    };
+}
 
-    getPhoto(){
-      if ( photo == null ) {
-      return 'http://forum.spaceengine.org/styles/se/theme/images/no_avatar.jpg';
-    } else {
-      return photo;
-    }
-    }
+class UserLevel {
+    String name;
+    String description;
+
+    UserLevel({
+        this.name,
+        this.description,
+    });
+
+    factory UserLevel.fromJson(Map<String, dynamic> json) => UserLevel(
+        name: json["name"],
+        description: json["description"],
+    );
+
+    Map<String, dynamic> toJson() => {
+        "name": name,
+        "description": description,
+    };
 }

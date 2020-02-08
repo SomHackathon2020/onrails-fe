@@ -14,7 +14,6 @@ class DetailActivityPage extends StatelessWidget {
           Text("DETALLE DE ACTIVIDAD")
         ],
       ),
-      bottomNavigationBar: BottomNav(),
     );
   }
 }

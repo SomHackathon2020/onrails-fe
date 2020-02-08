@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:on_rails_app/models/usuario.dart';
 import 'package:on_rails_app/pages/activitiesPage.dart';
 import 'package:on_rails_app/pages/contactPage.dart';
 import 'package:on_rails_app/pages/mainPage.dart';
+import 'package:on_rails_app/providers/UserProvider.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -15,6 +17,9 @@ class HomePage extends StatefulWidget {
 
 
 class _MyStatefulWidgetState extends State<HomePage> {
+
+  final userProvider = new UserProvider();
+
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
@@ -35,7 +40,10 @@ class _MyStatefulWidgetState extends State<HomePage> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {  
+
+   userProvider.getMyUserInfo();
+
     return Scaffold(
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
