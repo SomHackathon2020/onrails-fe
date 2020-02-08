@@ -26,18 +26,5 @@ class MyApp extends StatelessWidget {
 }
 
 
-<<<<<<< HEAD
- 
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-
-        title: Text(widget.title),
-      ),
-      body: Center(
-=======
->>>>>>> c26b9383a75eb20bdd8bf2bb7ad4b50d9a84660b
 
 
