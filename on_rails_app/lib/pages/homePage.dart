@@ -6,6 +6,8 @@ import 'package:on_rails_app/pages/contactPage.dart';
 import 'package:on_rails_app/pages/mainPage.dart';
 import 'package:on_rails_app/providers/UserProvider.dart';
 
+import 'profilePage.dart';
+
 
 class HomePage extends StatefulWidget {
 
@@ -27,10 +29,7 @@ class _MyStatefulWidgetState extends State<HomePage> {
     MainPage(),
     ActivityPage(),
     ContactPage(),
-    Text(
-      'Index 3: Perfil',
-      style: optionStyle,
-    ),
+    ProfilePage()
   ];
 
   void _onItemTapped(int index) {

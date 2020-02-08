@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:on_rails_app/components/actividadComponent.dart';
 import 'package:on_rails_app/models/usuario.dart';
 import 'package:on_rails_app/providers/UserProvider.dart';
+import 'package:on_rails_app/components/actividadComponent2.dart';
+import 'package:on_rails_app/components/actividadComponent3.dart';
 import 'package:pie_chart/pie_chart.dart';
 
 class MainPage extends StatelessWidget {
@@ -51,7 +53,8 @@ class MainPage extends StatelessWidget {
                     ),
                   initialText(userProvider),
                   EventComponent(),
-                  EventComponent()
+                  EventComponent2(),
+                  EventComponent3()
                 ], 
         ),
       ),

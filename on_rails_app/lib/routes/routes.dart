@@ -5,13 +5,14 @@ import 'package:on_rails_app/pages/contactPage.dart';
 import 'package:on_rails_app/pages/logIn.dart';
 
 import '../pages/contactPage.dart';
+import '../pages/logIn.dart';
 
 Map<String, WidgetBuilder> getApplicationRoutes() {
 
   return <String, WidgetBuilder> {
       '/'      : ( BuildContext context ) => HomePage(),
       'contact' : (BuildContext context ) => ContactPage(),
-      '/login' : (BuildContext context ) => LogIn(),
+      'logIn' : (BuildContext context) => LogIn(),
   };
 
 }

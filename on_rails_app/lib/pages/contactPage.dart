@@ -6,8 +6,6 @@ import 'package:on_rails_app/providers/UserProvider.dart';
 
 import 'dart:async';
 
-import '../components/bottomNav.dart';
-
 
 class ContactPage extends StatefulWidget {
   @override
