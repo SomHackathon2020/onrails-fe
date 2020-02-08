@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:on_rails_app/pages/activitiesPage.dart';
 import 'package:on_rails_app/pages/contactPage.dart';
+import 'package:on_rails_app/pages/mainPage.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -18,10 +19,7 @@ class _MyStatefulWidgetState extends State<HomePage> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static  List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Menu',
-      style: optionStyle,
-    ),
+    MainPage(),
     ActivityPage(),
     ContactPage(),
     Text(
