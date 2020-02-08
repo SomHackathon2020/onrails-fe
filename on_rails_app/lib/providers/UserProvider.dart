@@ -26,7 +26,6 @@ class UserProvider {
       options.contentType = 'application/json';
       String url = "http://may66.ddns.net:3000/api/user/0";
 
-      print('antes de la petisio');
       //final url = Uri.https(_url, 'user/0');
       Response res =  await _dio.get(url, options: options);
       //final decodedData = json.decode(res.data.toString());
@@ -35,8 +34,24 @@ class UserProvider {
       print(user.levelsId);
       return user;
       //return await _procesarRespuesta(url);
-
     }
+
+    Future<List<User>> getMyFriends() async {
+      var _dio = new Dio();
+      var options = new Options();
+      options.headers['mine_cart_number'] = '1234';
+      options.contentType = 'application/json';
+      String url = "http://may66.ddns.net:3000/api/user/friends";
+
+      //final url = Uri.https(_url, 'user/0');
+      Response res =  await _dio.get(url, options: options);
+      //final decodedData = json.decode(res.data.toString());
+      final users = new Users.fromJsonList(res.data);
+
+      return users.items;
+      //return await _procesarRespuesta(url);
+    }
+    
 
 
 }
