@@ -12,12 +12,11 @@ class GeolocatorService{
     Position position = await geolocator.getLastKnownPosition(desiredAccuracy: LocationAccuracy.high);
     print(position.latitude);
     print(position.longitude);
-
-    
     return position;
     } catch (e){ 
-      return new Position();
-      }
+    print("puta vida");
+    return new Position();
+    }
   }
 
 
