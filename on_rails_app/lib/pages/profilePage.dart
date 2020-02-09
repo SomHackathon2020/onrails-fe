@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../components/actividadComponent.dart';
+
 class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,8 +15,12 @@ class ProfilePage extends StatelessWidget {
                   child: Image.network("https://cdn.someecards.com/posts/meet-the-conservative-grandpa-on-twitter-who-chrissy-teigan-made-famous-Ku5.png")
               ),
             _getProfile(),
+
+            _textLogro(),
             //
             _getLogros(),
+            //
+            _getTitleLast(),
             //
             _getLastActivities()
           ],
@@ -22,9 +28,26 @@ class ProfilePage extends StatelessWidget {
       ),
     );
   }
+
+  Widget _getTitleLast(){
+    return Container(
+      padding: EdgeInsets.symmetric(vertical:25),
+      child: Title(
+                color: Colors.black, child: 
+                Text('Actividades Recientes',
+                textAlign: TextAlign.center, 
+                style: TextStyle(
+                  fontSize: 22
+                ),
+              )
+      )
+    );
+  }
   
   Widget _getProfile(){
-    return Title(
+    return Container(
+      padding: EdgeInsets.symmetric(vertical:25),
+      child: Title(
                 color: Colors.black, child: 
                 Text('Josep Perelada',
                 textAlign: TextAlign.center, 
@@ -32,21 +55,32 @@ class ProfilePage extends StatelessWidget {
                   fontSize: 22
                 ),
               )
+      )
+    );
+  }
+
+  Widget _textLogro() {
+     return Container(
+            child: Title(
+                color: Colors.black, child: 
+                Text('Logros',
+                textAlign: TextAlign.center, 
+                style: TextStyle(
+                  fontSize: 22
+                ),
+                
+              )
+            )
     );
   }
 
   Container _getLastActivities(){
     return Container(
-          margin: EdgeInsets.symmetric(vertical: 40.0),
-          height: 200.0,
+          height: 300.0,
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: <Widget>[
-              Container(
-                width: 160.0,
-                //color: Colors.red,
-                //child: Image.network("https://www.sabermassermas.com/wp-content/uploads/2013/10/Qu%C3%A9-es-y-c%C3%B3mo-usar-la-Banca-M%C3%B3vil-a-su-favor.png"),
-              ),
+              Container(width: 160.0,child: _minCard()),
               Container(
                 width: 160.0,
                 color: Colors.blue,
@@ -147,5 +181,62 @@ Container _putAchieve(String url, double ample, List<String> images){
       ]
     )
   );
+}
 
+Widget _minCard() {
+  final card = Container(
+      // clipBehavior: Clip.antiAlias,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Image.network("https://www.sabermassermas.com/wp-content/uploads/2013/10/Qu%C3%A9-es-y-c%C3%B3mo-usar-la-Banca-M%C3%B3vil-a-su-favor.png"),
+          Container(
+            padding: EdgeInsets.all(5.0),
+            child: Column(
+              children: <Widget>[
+                ListTile(
+                leading: Icon(Icons.phone_android, size: 50,),
+                title: Text('Aprende a usar el Móvil', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15))
+                ),
+                
+                Container(
+                  padding: EdgeInsets.all(5.0),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text("Gratis", style: TextStyle(fontSize:25, fontWeight: FontWeight.bold)),
+                    ],
+                  ),
+                )
+
+              ]),
+          )
+        ],
+      ),
+    );
+
+
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20.0),
+        color: Colors.white,
+        boxShadow: <BoxShadow>[
+          BoxShadow(
+            color: Colors.black26,
+            blurRadius: 10.0,
+            spreadRadius: 2.0,
+            offset: Offset(2.0, 10.0)
+          )
+        ]
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20.0),
+        child: GestureDetector(
+          onTap:()=>print("tocado!"),//CONTINUAR AQUI EL TOQUE DE LA TARJETA
+          child: card,
+        ),
+      ),
+    );
+  
 }
