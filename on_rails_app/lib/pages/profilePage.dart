@@ -1,10 +1,19 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:on_rails_app/models/usuario.dart';
+import 'package:on_rails_app/providers/UserProvider.dart';
 
 import '../components/actividadComponent.dart';
 
 class ProfilePage extends StatelessWidget {
+  
+  UserProvider userProvider;
+  
   @override
   Widget build(BuildContext context) {
+    userProvider = UserProvider();
+
     return Scaffold(
 
       body: SafeArea(
@@ -12,9 +21,27 @@ class ProfilePage extends StatelessWidget {
           //crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[            
             Container(
-                  child: Image.network("https://cdn.someecards.com/posts/meet-the-conservative-grandpa-on-twitter-who-chrissy-teigan-made-famous-Ku5.png")
+                  child: FutureBuilder(
+                    future: userProvider.getMyUserInfo(),
+                    builder: (BuildContext context, AsyncSnapshot<User> snapshot) {
+                      if(snapshot.hasData){
+                        return Center(
+                          child: Container(
+                            width: 200.0,
+                            height: 200.0,
+                            child: CircleAvatar(
+                              backgroundColor: Colors.white,
+                              backgroundImage: MemoryImage(base64Decode(snapshot.data.picture))
+                            ),
+                          ),
+                        );
+                      }else{
+                        return Center(child: CircularProgressIndicator());
+                      }
+                    },
+                  ),
               ),
-            _getProfile(),
+            _getProfile(userProvider),
 
             _textLogro(),
             //
@@ -44,18 +71,29 @@ class ProfilePage extends StatelessWidget {
     );
   }
   
-  Widget _getProfile(){
+  Widget _getProfile(UserProvider provider){
     return Container(
       padding: EdgeInsets.symmetric(vertical:25),
-      child: Title(
+      child:FutureBuilder(
+        future: provider.getMyUserInfo(),
+        builder: (BuildContext context, AsyncSnapshot<User> snapshot) {
+          if(snapshot.hasData){
+              return Title(
                 color: Colors.black, child: 
-                Text('Josep Perelada',
+                Text(snapshot.data.name,
                 textAlign: TextAlign.center, 
                 style: TextStyle(
                   fontSize: 22
                 ),
               )
-      )
+              );
+          }else{
+              return Text("");
+          }
+        },
+      ),
+      
+       
     );
   }
 
