@@ -5,11 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:on_rails_app/models/logro.dart';
 import 'package:on_rails_app/models/usuario.dart';
 import 'package:on_rails_app/providers/UserProvider.dart';
-<<<<<<< HEAD
-=======
 import 'package:on_rails_app/providers/achievement.dart';
 
->>>>>>> de3ede0726ad1d3a4ffde6f541ed762b89b865bb
 import '../components/actividadComponent.dart';
 
 
