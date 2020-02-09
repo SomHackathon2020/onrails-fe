@@ -4,6 +4,50 @@ import 'package:flutter/cupertino.dart';
 
 class LogIn extends StatelessWidget{
 
+  //  @override
+  //  Widget build(BuildContext context) {
+  //    return  Scaffold(
+  //      body: Container( decoration: BoxDecoration( color: Colors.white,
+  //         borderRadius: BorderRadius.circular(8.0),
+  //         boxShadow: [
+  //           BoxShadow(
+  //               color: Colors.black12,
+  //               offset: Offset(0.0, 15.0),
+  //               blurRadius: 15.0),
+  //           BoxShadow(
+  //               color: Colors.black12,
+  //               offset: Offset(0.0, -10.0),
+  //               blurRadius: 10.0),
+  //         ])
+  //        ,
+  //      child: Padding(
+  //        padding: const EdgeInsets.all(8.0),
+  //        child: Column(
+  //          crossAxisAlignment: CrossAxisAlignment.start,
+  //          children: <Widget>[
+  //              Text('Log In',
+  //             style: TextStyle(fontSize: 20),
+  //            ),
+  //            SizedBox(height: 20.0),
+  //            TextFormField(
+  //              keyboardType: TextInputType.emailAddress,
+  //              decoration: InputDecoration(labelText: "Email Address"),),
+  //            TextFormField(
+  //              obscureText: true,
+  //              keyboardType: TextInputType.emailAddress,
+  //            decoration: InputDecoration(labelText: "Password")),
+  //            SizedBox(height: 20.0),
+  //            RaisedButton(
+  //              child: Text("Log In"),
+  //              onPressed: (){print("kerjng");},
+  //            )
+  //          ],
+  //        ),
+  //      ),),
+  //    );
+  //  }
+
+
 @override
   Widget build(BuildContext context) {
     
