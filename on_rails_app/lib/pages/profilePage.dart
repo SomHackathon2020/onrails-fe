@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:on_rails_app/models/usuario.dart';
 import 'package:on_rails_app/providers/UserProvider.dart';
-
 import '../components/actividadComponent.dart';
+
 
 class ProfilePage extends StatelessWidget {
   
@@ -20,6 +20,7 @@ class ProfilePage extends StatelessWidget {
         child: ListView(
           //crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[            
+            SizedBox(height:10),
             Container(
                   child: FutureBuilder(
                     future: userProvider.getMyUserInfo(),
@@ -45,7 +46,8 @@ class ProfilePage extends StatelessWidget {
 
             _textLogro(),
             //
-            _getLogros(),
+            //_getLogros(),
+
             //
             _getTitleLast(),
             //

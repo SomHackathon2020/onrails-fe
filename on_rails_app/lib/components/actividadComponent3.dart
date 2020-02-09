@@ -48,7 +48,7 @@ class EventComponent3 extends StatelessWidget {
                           Text("Lola, Pedro, Alberto y 122 más"),
                         ],
                       ),
-                      Text("En Casa", style: TextStyle(fontSize:25, fontWeight: FontWeight.bold),),
+                      Text("En Casa", style: TextStyle(fontSize:20, fontWeight: FontWeight.bold),),
                     ],
                   ),
                 )
