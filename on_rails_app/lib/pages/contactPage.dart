@@ -82,7 +82,7 @@ class _ListaPageState extends State<ContactPage> {
           children: <Widget>[    
           ListTile(
             leading: CircleAvatar(
-                backgroundImage: MemoryImage(base64Decode(u.picture)),
+                backgroundImage: getPhoto(u),
                 ),
                 title: Text(u.name),
                 subtitle: Text("Nivel: "+ u.levelsId.toString()),
@@ -95,6 +95,14 @@ class _ListaPageState extends State<ContactPage> {
     }
 
     return ListView(children: listaDeComponentes);
+  }
+
+  ImageProvider getPhoto(User user){
+    try{
+      return MemoryImage(base64Decode(user.picture));
+    }catch(e){
+      return NetworkImage("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png");
+    }
   }
 
 

@@ -37,7 +37,7 @@ class ProfilePage extends StatelessWidget {
                             height: 200.0,
                             child: CircleAvatar(
                               backgroundColor: Colors.white,
-                              backgroundImage: MemoryImage(base64Decode(snapshot.data.picture))
+                              backgroundImage: getPhoto(snapshot.data)
                             ),
                           ),
                         );
@@ -189,6 +189,15 @@ class ProfilePage extends StatelessWidget {
           ),
         );
   }
+
+  ImageProvider getPhoto(User user){
+    try{
+      return MemoryImage(base64Decode(user.picture));
+    }catch(e){
+      return NetworkImage("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png");
+    }
+  }
+
 }
 
 

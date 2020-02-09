@@ -98,7 +98,7 @@ class SignUp extends StatelessWidget{
           borderRadius: BorderRadius.circular(32),
         ),
         onPressed: () {
-         
+         Navigator.pushNamed(context, '/');
         },
         padding: EdgeInsets.all(12),
         color: Color.fromARGB(255, 0, 196, 149),
@@ -115,7 +115,7 @@ class SignUp extends StatelessWidget{
           borderRadius: BorderRadius.circular(32),
         ),
         onPressed: () {
-         
+         Navigator.pushNamed(context, '/');
         },
         padding: EdgeInsets.all(12),
         color: Color.fromARGB(255, 0, 196, 149),

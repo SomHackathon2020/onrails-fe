@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
@@ -40,6 +42,8 @@ class ActivityPage extends StatelessWidget {
      },
     );
   }
+
+
 
   Widget getCardList(List<Evento> listEvent){
     List<Widget> cardList = List<Widget>();
