@@ -11,14 +11,14 @@ class EventProvider{
   
     Future<List<Evento>> getEvents() async {
       geolocatorService = GeolocatorService();
-      Position pos = geolocatorService.getPos() as Position;
-      print("lskrnfker"+ pos.altitude.toString());
+      Position pos = await geolocatorService.getPos();
+      print(pos.latitude);
       var _dio = new Dio();
       var options = new Options();
       options.headers['mine_cart_number'] = '1234';
       options.headers['lat'] = pos.latitude;
       options.headers['lon'] = pos.longitude;
-      options.headers['radius'] = 10000;
+      options.headers['radius'] = 100;
       options.contentType = 'application/json';
       String url = "http://may66.ddns.net:3000/api/event";
 

@@ -3,14 +3,11 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:on_rails_app/models/logro.dart';
-import 'package:on_rails_app/components/actividadComponenetDone.dart';
-import 'package:on_rails_app/components/actividadComponent2.dart';
 import 'package:on_rails_app/models/usuario.dart';
 import 'package:on_rails_app/providers/UserProvider.dart';
 import 'package:on_rails_app/providers/achievement.dart';
 
 import '../components/actividadComponent.dart';
-
 
 class ProfilePage extends StatelessWidget {
   
@@ -60,8 +57,7 @@ class ProfilePage extends StatelessWidget {
             //
             _getTitleLast(),
             //
-            EventComponentDone(),
-            EventComponentDone(),
+            _getLastActivities()
           ],
         ),
       ),
@@ -193,23 +189,6 @@ class ProfilePage extends StatelessWidget {
           ),
         );
   }
-/*
-  Widget _getLogros(){
-    String url = "https://media.istockphoto.com/vectors/best-concept-design-trophy-for-victory-award-championship-achievement-vector-id1025282144?k=6&m=1025282144&s=170667a&w=0&h=7hggqlqejAnobH9g-ElQLWU1PfGOy5iUNHtI2onb8Yg=";
-    List<String> images = new List();
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal:25),
-      // clipBehavior: Clip.antiAlias,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          _putAchieve(url, 50, images),
-          _putAchieve(url, 50, images)
-          //Image.network("https://www.sabermassermas.com/wp-content/uploads/2013/10/Qu%C3%A9-es-y-c%C3%B3mo-usar-la-Banca-M%C3%B3vil-a-su-favor.png"),
-        ]
-      )
-    );
-  }*/
 }
 
 

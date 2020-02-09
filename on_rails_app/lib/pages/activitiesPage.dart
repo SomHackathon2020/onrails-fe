@@ -23,27 +23,34 @@ class ActivityPage extends StatelessWidget {
           
       (
         resizeToAvoidBottomPadding: false,
-        body: ListView(
-           children: <Widget>[
-              EventComponent(),
-              EventComponent2(),
-              EventComponent3(),
-              FutureBuilder(
-                future: eventProvider.getEvents(),
-                builder: (BuildContext context, AsyncSnapshot<List<Evento>> snapshot) {
-                  if(snapshot.hasData){
-                    print(snapshot.data[0].distance);
-                    return Text("");
-                    
-                  }else{
-                    return Text("");
-
-                  }
-                },
-              ),
-           ],
+        body: getListView()
         ),
-      ),
+      );
+  }
+
+   Widget getListView (){
+    return FutureBuilder(
+      future: eventProvider.getEvents(),
+      builder: (BuildContext context, AsyncSnapshot<List<Evento>> snapshot) {
+          if(snapshot.hasData){
+              return getCardList(snapshot.data);
+          }else{
+              return Text("");
+          }
+     },
     );
   }
+
+  Widget getCardList(List<Evento> listEvent){
+    List<Widget> cardList = List<Widget>();
+    EventComponent card = EventComponent();
+    for(Evento e in listEvent){
+        print(e.name);
+         cardList.add(card.getCard(e));
+    }
+    return ListView(
+      children:cardList
+    );
+  }
+
 }
