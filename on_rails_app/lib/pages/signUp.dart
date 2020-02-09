@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
 
-class LogIn extends StatelessWidget{
+class SignUp extends StatelessWidget{
 
   //  @override
   //  Widget build(BuildContext context) {
@@ -61,6 +61,25 @@ class LogIn extends StatelessWidget{
       ),
     );
 
+    final fullName = TextFormField(
+      autofocus: false,
+      obscureText: false,
+      decoration: InputDecoration(
+        labelText: "Nombre Completo",
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        
+      ),
+    );
+
+    final date = TextFormField(
+      autofocus: false,
+      obscureText: false,
+      decoration: InputDecoration(
+        labelText: "Fecha Nacimiento",
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        
+      ),
+    );
     final password = TextFormField(
       autofocus: false,
       obscureText: true,
@@ -70,23 +89,9 @@ class LogIn extends StatelessWidget{
         
       ),
     );
+    
 
-    final loginButton = Padding(
-      padding: EdgeInsets.symmetric(vertical: 3),
-      child: RaisedButton(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(32),
-        ),
-        onPressed: () {
-         
-        },
-        padding: EdgeInsets.all(12),
-        color: Color.fromARGB(255, 0, 196, 149),
-        child: Text('Iniciar Session', style: TextStyle(color: Colors.white)),
-      ),
-    );
-
-  final signUpButton = Padding(
+    final signUpButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 3),
       child: RaisedButton(
         shape: RoundedRectangleBorder(
@@ -102,20 +107,34 @@ class LogIn extends StatelessWidget{
       
       
     );
-    
+
+    final logInButton = Padding(
+      padding: EdgeInsets.symmetric(vertical: 3),
+      child: RaisedButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(32),
+        ),
+        onPressed: () {
+         
+        },
+        padding: EdgeInsets.all(12),
+        color: Color.fromARGB(255, 0, 196, 149),
+        child: Text('Iniciar Sesion', style: TextStyle(color: Colors.white)),
+      ),
+      
+      
+    );
 
     return Container(
-      
       decoration: 
       BoxDecoration(
         image:DecorationImage(image: AssetImage("assets/back.png"),fit: BoxFit.cover)
-      )
-      ,
+      ),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color.fromARGB(255, 0, 196, 149),
         body: Center(
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal:25),
+            padding: EdgeInsets.symmetric(horizontal:20),
             decoration: BoxDecoration( color: Colors.white,
             borderRadius: BorderRadius.circular(8.0),
             boxShadow: [
@@ -130,29 +149,29 @@ class LogIn extends StatelessWidget{
             ]),
             child: SizedBox(
               width: 350,
-              height: 400,
-                
-                
+              height: 500,   
                   child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text("Iniciar Sesion", style: TextStyle(fontSize: 25), ),
-                    
-                    SizedBox(height: 48.0),
+                    Padding(padding: EdgeInsets.symmetric(vertical: 10)),
+                    Text("Registrate", style: TextStyle(fontSize: 25) ),
+                    SizedBox(height: 10.0),
+                    fullName,
+                    SizedBox(height: 10),
+                    date,                 
+                    SizedBox(height: 10),
                     email,
-                    SizedBox(height: 8.0),
+                    SizedBox(height: 10),
                     password,
-                    SizedBox(height: 24.0),
-                    loginButton,
-                    signUpButton
+                    SizedBox(height: 24),
+                    signUpButton,
+                    logInButton,
                   ],
               ),
                 
             ),
           ),
         ),
-        
       ),
     );
   } }
-  
