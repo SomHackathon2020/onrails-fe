@@ -50,7 +50,7 @@ class ProfilePage extends StatelessWidget {
             _getProfile(userProvider),
 
             _textLogro(),
-            SizedBox(height:5),
+            SizedBox(height:10),
             //
             _getLogrosS(achievementProvider),
 
@@ -114,7 +114,7 @@ class ProfilePage extends StatelessWidget {
             children: <Widget>[
               Image.memory(base64Decode(a.picture), scale: 4,),
               SizedBox(height:5),
-              Text(a.name)
+              Text(a.name, overflow: TextOverflow.ellipsis)
             ],
           )
         );
