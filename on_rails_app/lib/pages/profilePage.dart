@@ -1,18 +1,23 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:on_rails_app/models/logro.dart';
 import 'package:on_rails_app/models/usuario.dart';
 import 'package:on_rails_app/providers/UserProvider.dart';
+import 'package:on_rails_app/providers/achievement.dart';
 
 import '../components/actividadComponent.dart';
 
 class ProfilePage extends StatelessWidget {
   
   UserProvider userProvider;
-  
+  AchievementProvider achievementProvider;
   @override
   Widget build(BuildContext context) {
+
     userProvider = UserProvider();
+    achievementProvider = AchievementProvider();
 
     return Scaffold(
 
@@ -20,6 +25,7 @@ class ProfilePage extends StatelessWidget {
         child: ListView(
           //crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[            
+            SizedBox(height:10),
             Container(
                   child: FutureBuilder(
                     future: userProvider.getMyUserInfo(),
@@ -44,8 +50,10 @@ class ProfilePage extends StatelessWidget {
             _getProfile(userProvider),
 
             _textLogro(),
+            SizedBox(height:5),
             //
-            _getLogros(),
+            _getLogrosS(achievementProvider),
+
             //
             _getTitleLast(),
             //
@@ -92,11 +100,52 @@ class ProfilePage extends StatelessWidget {
           }
         },
       ),
-      
-       
     );
   }
 
+  Widget _getPageListLogros(List<Achievement> achList){
+    List<Widget> listaLogrosWidget = new List<Widget>();
+    
+    for(Achievement a in achList){
+      print(a.name);
+        var w = Container(
+          width: 150,
+          child:Column(
+            children: <Widget>[
+              Image.memory(base64Decode(a.picture), scale: 4,),
+              SizedBox(height:5),
+              Text(a.name)
+            ],
+          )
+        );
+        listaLogrosWidget.add(w);
+    }
+
+
+
+    return Container(
+      height:100,
+      child: ListView(
+
+        scrollDirection: Axis.horizontal,
+        children: listaLogrosWidget
+      ),
+    );
+  }
+
+
+ Widget _getLogrosS(AchievementProvider achievementProvider){
+    return FutureBuilder(
+      future: achievementProvider.getMyAchievements(),
+      builder: (BuildContext context, AsyncSnapshot<List<Achievement>> snapshot) {
+        if(snapshot.hasData){
+          return _getPageListLogros(snapshot.data);
+        }else{
+          return Text("No tienes logros :(");
+        }
+      },
+    );
+  }
   Widget _textLogro() {
      return Container(
             child: Title(
@@ -140,7 +189,7 @@ class ProfilePage extends StatelessWidget {
           ),
         );
   }
-
+/*
   Widget _getLogros(){
     String url = "https://media.istockphoto.com/vectors/best-concept-design-trophy-for-victory-award-championship-achievement-vector-id1025282144?k=6&m=1025282144&s=170667a&w=0&h=7hggqlqejAnobH9g-ElQLWU1PfGOy5iUNHtI2onb8Yg=";
     List<String> images = new List();
@@ -156,70 +205,9 @@ class ProfilePage extends StatelessWidget {
         ]
       )
     );
-  }
+  }*/
 }
 
-Container _putAchieve(String url, double ample, List<String> images){
-  return Container(
-    padding: EdgeInsets.all(5.0),
-    child: Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: <Widget>[
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              width: ample,
-              child: Image.network(url)
-            )
-          ],
-        ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              width: 50,
-              child: Image.network(url)
-            )
-          ],
-        ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              width: 50,
-              child: Image.network(url)
-            )
-          ],
-        ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              width: 50,
-              child: Image.network(url)
-            )
-          ],
-        ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              width: 50,
-              child: Image.network(url)
-            )
-          ],
-        ),
-      ]
-    )
-  );
-}
 
 Widget _minCard() {
   final card = Container(

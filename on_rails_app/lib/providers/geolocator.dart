@@ -11,7 +11,11 @@ class GeolocatorService{
     Position position = await geolocator.getLastKnownPosition(desiredAccuracy: LocationAccuracy.high);
     print(position.latitude);
     print(position.longitude);
+
+    
     return position;
   }
+
+
 
 }
