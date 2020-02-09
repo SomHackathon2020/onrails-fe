@@ -39,7 +39,6 @@ class User {
         actualxp: json["actualxp"],
         picture: json["picture"],
         levelsId: json["levels_id"],
-        token: json["token"],
         level: UserLevel.fromJson(json["level"]),
     );
 
@@ -52,7 +51,6 @@ class User {
         "actualxp": actualxp,
         "picture": picture,
         "levels_id": levelsId,
-        "token": token,
         "level": level.toJson(),
     };
 }
@@ -75,4 +73,20 @@ class UserLevel {
         "name": name,
         "description": description,
     };
+}
+
+class Users {
+  List<User> items = new List();
+
+  Users();
+
+  Users.fromJsonList( List<dynamic> jsonList  ) {
+
+    if ( jsonList == null ) return;
+
+    for ( var item in jsonList  ) {
+      final usuario = new User.fromJson(item);
+      items.add( usuario );
+    }
+  }
 }
