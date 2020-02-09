@@ -3,6 +3,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:on_rails_app/models/logro.dart';
+import 'package:on_rails_app/components/actividadComponenetDone.dart';
+import 'package:on_rails_app/components/actividadComponent2.dart';
 import 'package:on_rails_app/models/usuario.dart';
 import 'package:on_rails_app/providers/UserProvider.dart';
 import 'package:on_rails_app/providers/achievement.dart';
@@ -58,7 +60,8 @@ class ProfilePage extends StatelessWidget {
             //
             _getTitleLast(),
             //
-            _getLastActivities()
+            EventComponentDone(),
+            EventComponentDone(),
           ],
         ),
       ),
