@@ -8,12 +8,16 @@ class GeolocatorService{
 
   Future<Position> getPos()async{
     Geolocator geolocator = Geolocator()..forceAndroidLocationManager = true;
+    try {
     Position position = await geolocator.getLastKnownPosition(desiredAccuracy: LocationAccuracy.high);
     print(position.latitude);
     print(position.longitude);
 
     
     return position;
+    } catch (e){ 
+      return new Position();
+      }
   }
 
 
